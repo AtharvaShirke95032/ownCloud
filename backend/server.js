@@ -39,6 +39,7 @@ app.post("/login", (req, res) => {
       maxAge: 24 * 60 * 60 * 1000,
       sameSite: "none", // important for cross-origin
       secure: true,
+    
     });
     return res.status(200).json({ message: "Logged in successfully" });
   }

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function UploadPage() {
-  const [files, setFiles] = useState(null); // rename to files
+  const [files, setFiles] = useState(null); 
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(true);
   const router = useRouter();
