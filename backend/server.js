@@ -37,8 +37,8 @@ app.post("/login", (req, res) => {
       httpOnly: true,
       signed: true,
       maxAge: 24 * 60 * 60 * 1000,
-      sameSite: "lax", // important for cross-origin
-      secure: false,
+      sameSite: "none", // important for cross-origin
+      secure: true,
     });
     return res.status(200).json({ message: "Logged in successfully" });
   }
