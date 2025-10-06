@@ -10,7 +10,7 @@ export default function LoginPage() {
   async function handleLogin(e) {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:4000/login", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ password }),
@@ -26,7 +26,7 @@ export default function LoginPage() {
 
   useEffect(() => {
   async function checkAlreadyLoggedIn() {
-    const res = await fetch("http://localhost:4000/check-auth", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/check-auth`, {
       credentials: "include",
     });
     if (res.ok) router.replace("/upload"); // if already logged in, skip login

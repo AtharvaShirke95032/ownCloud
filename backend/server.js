@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 4000;
 const COOKIE_SECRET = process.env.COOKIE_SECRET || "supersecret";
 
 // Middleware
-app.use(cors({ origin: ["http://localhost:3000", "http://192.168.0.103:3000"], credentials: true }));
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 app.use(express.json());
 app.use(cookieParser(COOKIE_SECRET));
 

@@ -11,7 +11,7 @@ export default function UploadPage() {
   useEffect(() => {
     async function checkAuth() {
       try {
-        const res = await fetch("http://localhost:4000/check-auth", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/check-auth`, {
           credentials: "include",
         });
         if (!res.ok) router.push("/login");
@@ -33,7 +33,7 @@ export default function UploadPage() {
     }
 
     try {
-      const res = await fetch("http://localhost:4000/upload", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/upload`, {
         method: "POST",
         body: formData,
         credentials: "include",
